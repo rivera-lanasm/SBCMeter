@@ -42,3 +42,10 @@ $ sudo systemctl daemon-reload
 [ ] cli
 [ ] 
 
+### cli commands:, guide: [here](https://clig.dev/) 
+- system setup 
+- system list diag services
+- system check service status 
+- system stop service 
+
+
