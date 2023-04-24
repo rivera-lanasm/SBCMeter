@@ -3,9 +3,8 @@
 ROOT="/home/homer"
 
 # 
-mkdir -p "$ROOT/diagnostic_src"
-mkdir -p "$ROOT/diagnostic_src/data"
-mkdir -p "$ROOT/diagnostic_src/error"
+mkdir -p "$ROOT/rbpi_monitor/data"
+mkdir -p "$ROOT/rbpi_monitor/error"
 
 # svc template 
 SVC_TEMPLATE="[Unit]

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-OUT_PATH="/home/homer/diagnostic_src/data/core_temp.txt"
-ERROR_PATH="/home/homer/diagnostic_src/error/core_temp.txt"
+OUT_PATH="/home/homer/rbpi_monitor/data/temp_monitor.txt"
+ERROR_PATH="/home/homer/rbpi_monitor/error/temp_monitor.txt"
 
 while true; do
         temp=$(vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*')
