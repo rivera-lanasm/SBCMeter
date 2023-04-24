@@ -41,10 +41,11 @@ for svc_name in $SVC_NAME; do
     "
     echo $SVC_TEMPLATE
     # chmod .sh script 
-    #chmod +x svc_script_path
+    chmod +x svc_script_path
     
     # write service file 
-    #sudo echo SVC_TEMPLATE > "/etc/systemd/system/${svc_script}.service"
+    sudo echo SVC_TEMPLATE > "$PWD/test.txt"
+    #"/etc/systemd/system/${svc_script}.service"
 
     # enable svc file 
     #sudo "systemctl enable ${svc_script}.service"

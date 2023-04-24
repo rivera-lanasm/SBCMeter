@@ -44,8 +44,14 @@ $ sudo systemctl daemon-reload
 
 ### cli commands:, guide: [here](https://clig.dev/) 
 - system setup 
+    - chmod +x rbpi_monitor/system_setup/service_setup.sh
+    - 
 - system list diag services
 - system check service status 
 - system stop service 
+
+
+
+
 
 
