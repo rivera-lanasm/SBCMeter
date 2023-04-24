@@ -1,0 +1,68 @@
+/* Set a default background color and font family for the entire dashboard */
+body {
+  background-color: #292929;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the header with a contrasting background color, white text, and a border */
+header {
+  background-color: #1f1f1f;
+  color: #fff;
+  border-bottom: 1px solid #555;
+  padding: 10px;
+}
+
+/* Style the navigation menu with a contrasting background color, white text, and a border */
+nav {
+  background-color: #1f1f1f;
+  color: #fff;
+  border-right: 1px solid #555;
+  padding: 10px;
+}
+
+/* Style the links in the navigation menu */
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  padding: 5px;
+  display: block;
+}
+
+/* Style the active link in the navigation menu with a brighter background color */
+nav a.active {
+  background-color: #444;
+}
+
+/* Style the main content area with a white background and a border */
+main {
+  background-color: #fff;
+  border: 1px solid #555;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Style the data visualizations using the D3 library */
+.visualization {
+  margin: 10px;
+}
+
+/* Set a comfortable color contrast for text and other content */
+body {
+  color: #ccc;
+}
+
+/* Style the buttons with a contrasting background color and white text */
+button {
+  background-color: #1f1f1f;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Style the buttons on hover */
+button:hover {
+  background-color: #444;
+}
+

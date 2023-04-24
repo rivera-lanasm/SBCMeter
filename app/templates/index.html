@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/global.css')}}">
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+        <h1>blog</h1>
+        <h2>{{ title }} - Microblog</h2>
+    </head>
+    <body>
+        <h1>Hello, {{ user.username }}!</h1>
+    </body>
+</html>
