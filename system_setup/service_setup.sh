@@ -23,17 +23,18 @@ WantedBy=multi-user.target
 SVC_NAME=("RbpiHealth_Temp")
 SVC_SCRIPT=("monitor_temp")
 
-for i in ${!SVC_NAME[@]}; do
+i=0
+for svc_name in $SVC_NAME; do
     
-    svc_name=${SVC_NAME[$i]}
-    svc_script="{$PWD/system_setup/$SVC_SCRIPT[$i]}.sh"
+    svc_script=${SVC_SCRIPT[$i]}
+    svc_script_path="$PWD/system_setup/$SVC_SCRIPT.sh"
 
     # svc template 
     SVC_TEMPLATE="[Unit]
     Description=${svc_name}
 
     [Service]
-    ExecStart=${svc_script}
+    ExecStart=${svc_script_path}
     Restart=always
 
     [Install]
@@ -51,6 +52,8 @@ for i in ${!SVC_NAME[@]}; do
     
     # start svc 
     #sudo "systemctl start ${svc_script}.service"
+    
+    i=$((i+1))
 
 done
 
