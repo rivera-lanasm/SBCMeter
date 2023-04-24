@@ -3,9 +3,9 @@
 ROOT="/home/homer"
 
 # 
-mkdir "$ROOT/diagnostic_src"
-mkdir "$ROOT/diagnostic_src/data"
-mkdir "$ROOT/diagnostic_src/error"
+mkdir -p "$ROOT/diagnostic_src"
+mkdir -p "$ROOT/diagnostic_src/data"
+mkdir -p "$ROOT/diagnostic_src/error"
 
 # svc template 
 SVC_TEMPLATE="[Unit]
@@ -39,7 +39,7 @@ for i in ${!SVC_NAME[@]}; do
     [Install]
     WantedBy=multi-user.target
     "
-    echo SVC_TEMPLATE
+    echo $SVC_TEMPLATE
     # chmod .sh script 
     #chmod +x svc_script
     
