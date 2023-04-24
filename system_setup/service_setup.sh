@@ -44,7 +44,7 @@ for svc_name in $SVC_NAME; do
     chmod +x svc_script_path
     
     # write service file 
-    sudo echo SVC_TEMPLATE > "$PWD/test.txt"
+    sudo echo $SVC_TEMPLATE > "$PWD/test.txt"
     #"/etc/systemd/system/${svc_script}.service"
 
     # enable svc file 
