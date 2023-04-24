@@ -27,7 +27,7 @@ i=0
 for svc_name in $SVC_NAME; do
     
     svc_script=${SVC_SCRIPT[$i]}
-    svc_script_path="$PWD/system_setup/$SVC_SCRIPT.sh"
+    svc_script_path="$PWD/rbpi_monitor/system_setup/$svc_script.sh"
 
     # svc template 
     SVC_TEMPLATE="[Unit]
@@ -42,7 +42,7 @@ for svc_name in $SVC_NAME; do
     "
     echo $SVC_TEMPLATE
     # chmod .sh script 
-    #chmod +x svc_script
+    #chmod +x svc_script_path
     
     # write service file 
     #sudo echo SVC_TEMPLATE > "/etc/systemd/system/${svc_script}.service"
