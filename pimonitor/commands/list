@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -e
+. "$PIMONCLI_WORKDIR/common"
+
+cli_help_list() {
+  echo "
+Command: list
+Usage: 
+  list pimonitor systemd services
+Options:
+  svc --> list systemd services that ship with rbpi_monitor
+"
+  exit 1
+}
+
+case "$1" in
+  list|l)
+    "$PIMONCLI_WORKDIR/commands/list" | tee -ia "$PIMONCLI_WORKDIR/logs/list_${2}.log"
+    ;;
+  *)
+    cli_help
+    ;;
+esac
+
+
+[ ! -n "$1" ] && cli_help_list
+
+export PIMONCLI_PROJECT_NAME=$1
+
+cli_log "PiMonitor List Metrics"
+
+cli_log "ENV variables"
+env | grep "PIMONCLI_*"
+
+cli_log "PiMonitor System Metrics!"
+
+
+cli_log "List END"

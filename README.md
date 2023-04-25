@@ -25,6 +25,8 @@
 
 ### systemd 
 
+- list services and status
+
 - check status : systemctl status temp_monitor
 
 - stop service: sudo systemctl stop temp_monitor
@@ -49,6 +51,19 @@ $ sudo systemctl daemon-reload
 - system list diag services
 - system check service status 
 - system stop service 
+
+
+resources 
+- https://www.maketecheasier.com/finding-raspberry-pi-system-information/
+http://youresuchageek.blogspot.com/2013/01/howto-raspberry-pi-monitor-your.html
+https://www.jeffgeerling.com/blog/2020/overclocking-raspberry-pi-compute-module-4
+
+
+https://medium.com/@brotandgames/build-a-custom-cli-with-bash-e3ce60cfb9a4
+https://blog.logrocket.com/build-interactive-charts-flask-d3js
+https://benalexkeen.com/creating-graphs-using-flask-and-d3/
+https://sentry.io/answers/serve-static-files-flask/
+
 
 
 

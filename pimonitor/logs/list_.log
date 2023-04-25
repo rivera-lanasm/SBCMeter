@@ -1,0 +1,19 @@
+
+Command: list
+Usage: 
+  list pimonitor systemd services
+
+Command: list
+Usage: 
+  list pimonitor systemd services
+
+Command: list
+Usage: 
+  list pimonitor systemd services
+== list 2023-04-25T03:07:53Z PiMonitor List Metrics
+== list 2023-04-25T03:07:53Z ENV variables
+PIMONCLI_WORKDIR=/home/mriveralanas/projects/rbpi_system_monitor/pimonitor
+PIMONCLI_VAR=example
+PIMONCLI_PROJECT_NAME=
+== list 2023-04-25T03:07:53Z PiMonitor System Metrics!
+== list 2023-04-25T03:07:53Z List END
