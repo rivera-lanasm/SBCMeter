@@ -22,13 +22,22 @@ Options:
 svc_stop() {
     
     local svc_script=$1
+    # check if service is already configured and running
+    svc_status=$(systemctl is-enabled $svc_script)
+    if [ "$svc_status" = "*Failed to get unit file state*" ]; then
+    	echo "service: $svc_script not created"
+	    exit 0
+    else
+    	echo "service: $svc_script, start enable proc"
+    fi
+
     # stop service 
     sudo systemctl stop "${svc_script}"
     # delete service 
     sudo systemctl disable "${svc_script}"
     # rm sym links 
     sudo rm "/etc/systemd/system/${svc_script}.service"
-    sudo rm "/usr/lib/systemd/system/${svc_script}.service"
+    #sudo rm "/usr/lib/systemd/system/${svc_script}.service"
     sudo systemctl daemon-reload
     
     echo "${svc_script} service removed"
