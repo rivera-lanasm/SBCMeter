@@ -34,6 +34,13 @@ svc_config() {
     svc_script_path="$PIMONAPP_WORKDIR/system_setup/$svc_script.sh"
 
     # check if service is already configured and running
+    svc_status=$(systemctl is-enabled $svc_script)
+    if [ "$svc_status" = "enabled" ]; then
+    	echo "service: $svc_script is already enabled"
+	exit 0
+    else
+    	echo "service: $svc_script, start enable proc"
+    fi
 
     # svc template 
     SVC_TEMPLATE="[Unit]

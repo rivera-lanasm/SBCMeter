@@ -2,3 +2,5 @@
 [Unit] \nDescription=RbpiHealth_Temp \n[Service] \nExecStart=/home/mriveralanas/projects/rbpi_system_monitor/pimonitor/system_setup/monitor_temp.sh \nRestart=always \n[Install] \nWantedBy=multi-user.target
 [Unit] \nDescription=RbpiHealth_Temp \n[Service] \nExecStart=/home/mriveralanas/projects/rbpi_system_monitor/pimonitor/system_setup/monitor_temp.sh \nRestart=always \n[Install] \nWantedBy=multi-user.target
 [Unit] \nDescription=RbpiHealth_Temp \n[Service] \nExecStart=/home/mriveralanas/projects/rbpi_system_monitor/pimonitor/system_setup/monitor_temp.sh \nRestart=always \n[Install] \nWantedBy=multi-user.target
+service: monitor_temp is enabled
+service: monitor_temp is enabled
