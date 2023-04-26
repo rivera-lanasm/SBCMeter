@@ -71,7 +71,13 @@ https://sentry.io/answers/serve-static-files-flask/
 PIMON_DIR=/home/USERNAME/rbpi_monitor
 
 ```
-
+ 
+to do 
+- put data directory in flask app dir under static 
+- leave error directory in pimonitor dir 
+- create remaining systemd commands 
+- front end on local D3 
+- configure port so that app is available to specific IP (set in config file)
 
 
 
