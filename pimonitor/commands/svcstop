@@ -27,8 +27,8 @@ svc_stop() {
     # delete service 
     sudo systemctl disable "${svc_script}"
     # rm sym links 
-    #sudo rm "/etc/systemd/system/${svc_script}"
-    #sudo rm "/usr/lib/systemd/system/${svc_script}"
+    sudo rm "/etc/systemd/system/${svc_script}.service"
+    sudo rm "/usr/lib/systemd/system/${svc_script}.service"
     sudo systemctl daemon-reload
     
     echo "${svc_script} service removed"

@@ -33,7 +33,6 @@ svc_config() {
     mkdir -p $DATA_DIR
     mkdir -p $ERROR_DIR
 
-    #svc_script=${SVC_SCRIPT[$i]}
     svc_script_path="$PIMONAPP_WORKDIR/system_setup/$svc_script.sh"
 
     # check if service is already configured and running
