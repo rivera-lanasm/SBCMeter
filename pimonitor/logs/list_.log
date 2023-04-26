@@ -5,3 +5,10 @@ Usage:
 Options:
   svc --> list systemd services that ship with rbpi_monitor
 
+
+Command: list
+Usage: 
+  list pimonitor systemd services
+Options:
+  svc --> list systemd services that ship with rbpi_monitor
+

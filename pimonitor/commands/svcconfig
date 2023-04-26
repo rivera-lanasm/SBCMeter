@@ -35,7 +35,7 @@ svc_config() {
     #SVC_SCRIPT=("monitor_temp")
     
     #svc_script=${SVC_SCRIPT[$i]}
-    svc_script_path="$PIMONCLI_WORKDIR/system_setup/$svc_script.sh"
+    svc_script_path="$PIMONAPP_WORKDIR/system_setup/$svc_script.sh"
 
     # svc template 
     SVC_TEMPLATE="[Unit]
@@ -53,10 +53,10 @@ svc_config() {
     sudo echo -e $SVC_TEMPLATE > "/etc/systemd/system/${svc_script}.service"
 
     # enable svc file 
-    sudo "systemctl enable ${svc_script}.service"
+    sudo systemctl enable "${svc_script}.service"
     
     # start svc 
-    sudo "systemctl start ${svc_script}.service"
+    sudo systemctl start "${svc_script}.service"
  
 
 }
