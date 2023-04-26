@@ -1,0 +1,8 @@
+
+Command: svcstop
+Usage: 
+  stop systemd service by name
+Options:
+    - temp_monitor
+  
+
