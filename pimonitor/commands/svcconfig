@@ -63,7 +63,7 @@ svc_config() {
     # start svc 
     sudo systemctl start "${svc_script}.service"
  
-
+    echo "Started Service: ${svc_script}"
 }
 
 case "$1" in
