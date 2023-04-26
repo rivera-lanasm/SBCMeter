@@ -61,7 +61,9 @@ svc_config() {
 
 case "$1" in
   monitor_temp)
+    echo "Start Config"
     svc_config "RbpiHealth_Temp" "monitor_temp"
+    echo "end config"
     ;;
   *)
     cli_help_configsvc
