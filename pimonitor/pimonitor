@@ -36,6 +36,9 @@ case "$1" in
   svcconfig)
     "$PIMONCLI_WORKDIR/commands/svcconfig" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/svcconfig_${2}.log"
     ;;
+  svcstop)
+    "$PIMONCLI_WORKDIR/commands/svcstop" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/svcstop_${2}.log"
+    ;;
   *)
     cli_help
     ;;
