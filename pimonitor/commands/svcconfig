@@ -46,9 +46,6 @@ svc_config() {
     \n[Install]
     \nWantedBy=multi-user.target
     "
-    
-    echo $SVC_TEMPLATE
-
     # chmod .sh script 
     chmod +x $svc_script_path
     
