@@ -37,6 +37,13 @@ svc_config() {
 
     # check if service is already configured and running
     cli_log "check svc status"
+    if systemctl is-enabled service-name.service &> /dev/null; then
+        cli_log "svc script does not exist"
+    else
+        cli_log "run $svc_script stop"
+        quit 1
+    fi
+
     svc_status=$(systemctl is-enabled $svc_script)
     cli_log $svc_status
     if [ $svc_status == "enabled" ]; then
