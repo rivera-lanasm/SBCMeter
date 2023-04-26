@@ -3,3 +3,5 @@ app/__pycache__/*
 flaskenv/*
 data/*
 error/*
+pimonitor/config
+pimonitor/log/*.log

@@ -65,7 +65,12 @@ https://benalexkeen.com/creating-graphs-using-flask-and-d3/
 https://sentry.io/answers/serve-static-files-flask/
 
 
+### manual set up 
+- add config file as follows:
+```
+PIMON_DIR=/home/USERNAME/rbpi_monitor
 
+```
 
 
 

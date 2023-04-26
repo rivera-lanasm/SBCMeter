@@ -1,0 +1,44 @@
+== list 2023-04-26T04:05:40Z PiMonitor: List svc
+
+Raspberry Health Monitor Systemd Services:
+    - temp_monitor.service --> records Pi temp. (C) every five minutes
+
+
+
+== list 2023-04-26T04:05:44Z PiMonitor: List svc
+
+Raspberry Health Monitor Systemd Services:
+    - temp_monitor.service --> records Pi temp. (C) every five minutes
+
+
+
+== list 2023-04-26T04:12:12Z PiMonitor: List svc
+
+Raspberry Health Monitor Systemd Services:
+    - temp_monitor.service --> records Pi temp. (C) every five minutes
+
+
+
+== list 2023-04-26T04:14:58Z Exporting config ...
+== list 2023-04-26T04:14:58Z PiMonitor: List svc
+
+Raspberry Health Monitor Systemd Services:
+    - temp_monitor.service --> records Pi temp. (C) every five minutes
+
+
+
+== list 2023-04-26T04:14:59Z Exporting config ...
+== list 2023-04-26T04:14:59Z PiMonitor: List svc
+
+Raspberry Health Monitor Systemd Services:
+    - temp_monitor.service --> records Pi temp. (C) every five minutes
+
+
+
+== list 2023-04-26T04:46:25Z Exporting config ...
+== list 2023-04-26T04:46:25Z PiMonitor: List svc
+
+Raspberry Health Monitor Systemd Services:
+    - temp_monitor.service --> records Pi temp. (C) every five minutes
+
+

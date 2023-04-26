@@ -1,0 +1,8 @@
+== svcconfig 2023-04-26T04:46:30Z Exporting config ...
+
+Command: svcconfig
+Usage: 
+  configure systemd service by name
+Options:
+  monitor_temp --> setup service to measure pi temperature
+

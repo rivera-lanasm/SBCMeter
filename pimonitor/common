@@ -5,3 +5,15 @@ cli_log() {
   timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
   echo "== $script_name $timestamp $1"
 }
+
+
+load_config() {
+    cli_log "Exporting config ..."
+    [ ! -f "$PIMONCLI_WORKDIR/config" ] \
+      && echo "ERROR: No $PIMONCLI_WORKDIR/config file found. " \
+      && echo "cp $PIMONCLI_WORKDIR/config.template $PIMONCLI_WORKDIR/config and adjust." \
+      && exit 1
+
+    export $(cat "$PIMONCLI_WORKDIR/config" | xargs)
+}
+

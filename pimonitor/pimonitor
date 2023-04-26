@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
+# enables the errexit option
 set -e
+
+# Temp --> set working directory
 export PIMONCLI_WORKDIR=$(cd $(dirname $0) && pwd)
-# shellcheck source=common
+
+# load common functions
 . "$PIMONCLI_WORKDIR/common"
 
-
+# ========================
 cli_help() {
   cli_name=${0##*/}
   echo "
@@ -21,17 +25,16 @@ Commands:
   exit 1
 }
 
-cli_log "Exporting config ..."
-[ ! -f "$PIMONCLI_WORKDIR/config" ] \
-  && echo "ERROR: No $PIMONCLI_WORKDIR/config file found. " \
-  && echo "cp $PIMONCLI_WORKDIR/config.template $PIMONCLI_WORKDIR/config and adjust." \
-  && exit 1
+# load config 
+load_config
 
-export $(cat "$PIMONCLI_WORKDIR/config" | xargs)
-
+# exec command
 case "$1" in
-  list|l)
-    "$PIMONCLI_WORKDIR/commands/list" | tee -ia "$PIMONCLI_WORKDIR/logs/list_${2}.log"
+  list)
+    "$PIMONCLI_WORKDIR/commands/list" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/list_${2}.log"
+    ;;
+  svcconfig)
+    "$PIMONCLI_WORKDIR/commands/svcconfig" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/svcconfig_${2}.log"
     ;;
   *)
     cli_help

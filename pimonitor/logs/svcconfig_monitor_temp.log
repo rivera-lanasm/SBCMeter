@@ -1,0 +1,4 @@
+== svcconfig 2023-04-26T04:46:38Z Exporting config ...
+[Unit] \nDescription=RbpiHealth_Temp \n[Service] \nExecStart=/home/mriveralanas/projects/rbpi_system_monitor/pimonitor/system_setup/monitor_temp.sh \nRestart=always \n[Install] \nWantedBy=multi-user.target
+[Unit] \nDescription=RbpiHealth_Temp \n[Service] \nExecStart=/home/mriveralanas/projects/rbpi_system_monitor/pimonitor/system_setup/monitor_temp.sh \nRestart=always \n[Install] \nWantedBy=multi-user.target
+[Unit] \nDescription=RbpiHealth_Temp \n[Service] \nExecStart=/home/mriveralanas/projects/rbpi_system_monitor/pimonitor/system_setup/monitor_temp.sh \nRestart=always \n[Install] \nWantedBy=multi-user.target

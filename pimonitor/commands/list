@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
+
 set -e
+
+# load common functions
 . "$PIMONCLI_WORKDIR/common"
 
+# load config 
+#load_config
+
+# =====================
 cli_help_list() {
   echo "
 Command: list
@@ -13,26 +20,16 @@ Options:
   exit 1
 }
 
-case "$1" in
-  list|l)
-    "$PIMONCLI_WORKDIR/commands/list" | tee -ia "$PIMONCLI_WORKDIR/logs/list_${2}.log"
-    ;;
-  *)
-    cli_help
-    ;;
-esac
-
-
+# no argument
 [ ! -n "$1" ] && cli_help_list
+# unsupported argument
 
-export PIMONCLI_PROJECT_NAME=$1
+# case stmt
+cli_log "PiMonitor: List $1"
+# service|svc
+echo "
+Raspberry Health Monitor Systemd Services:
+    - temp_monitor.service --> records Pi temp. (C) every five minutes
 
-cli_log "PiMonitor List Metrics"
+"
 
-cli_log "ENV variables"
-env | grep "PIMONCLI_*"
-
-cli_log "PiMonitor System Metrics!"
-
-
-cli_log "List END"
