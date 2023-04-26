@@ -2,11 +2,11 @@
 
 set -e
 
-# load config 
-load_config
-
 # load common functions
 . "$PIMONCLI_WORKDIR/common"
+
+# load config 
+load_config
 
 # =======================
 cli_help_configsvc() {
