@@ -1,1 +1,2 @@
-PIMONCLI_WORKDIR=/home/mriveralanas/projects/rbpi_system_monitor/pimonitor
+PIMONCLI_WORKDIR=/home/homer/rbpi_monitor/pimonitor
+PIMONAPP_WORKDIR=/home/homer/rbpi_monitor

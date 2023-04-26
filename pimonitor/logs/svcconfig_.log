@@ -6,3 +6,10 @@ Usage:
 Options:
   monitor_temp --> setup service to measure pi temperature
 
+
+Command: svcconfig
+Usage: 
+  configure systemd service by name
+Options:
+  monitor_temp --> setup service to measure pi temperature
+
