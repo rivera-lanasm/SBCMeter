@@ -31,13 +31,13 @@ load_config
 # exec command
 case "$1" in
   list)
-    sudo "$PIMONCLI_WORKDIR/commands/list" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/list_${2}.log"
+    "$PIMONCLI_WORKDIR/commands/list" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/list_${2}.log"
     ;;
   svcconfig)
-    sudo "$PIMONCLI_WORKDIR/commands/svcconfig" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/svcconfig_${2}.log"
+    "$PIMONCLI_WORKDIR/commands/svcconfig" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/svcconfig_${2}.log"
     ;;
   svcstop)
-    sudo "$PIMONCLI_WORKDIR/commands/svcstop" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/svcstop_${2}.log"
+    "$PIMONCLI_WORKDIR/commands/svcstop" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/svcstop_${2}.log"
     ;;
   *)
     cli_help
