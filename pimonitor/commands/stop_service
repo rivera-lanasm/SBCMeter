@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+set -e
+
+# load common functions
+. "$PIMONCLI_WORKDIR/common"
+
+# load config 
+#load_config
+
+# =======================
+cli_help_configsvc() {
+  echo "
+Command: svcconfig
+Usage: 
+  configure systemd service by name
+Options:
+  monitor_temp --> setup service to measure pi temperature
+"
+  exit 1
+}
+
+# =======================
+svc_config() {
+    
+    # variables
+    local svc_name=$1
+    local svc_script=$2
+    
+    mkdir -p "$PIMONCLI_WORKDIR/data"
+    mkdir -p "$PIMONCLI_WORKDIR/error"
+
+    # populate  
+    #SVC_NAME=("RbpiHealth_Temp")
+    #SVC_SCRIPT=("monitor_temp")
+    
+    #svc_script=${SVC_SCRIPT[$i]}
+    svc_script_path="$PIMONAPP_WORKDIR/system_setup/$svc_script.sh"
+
+    # svc template 
+    SVC_TEMPLATE="[Unit]
+    \nDescription=${svc_name}
+    \n[Service]
+    \nExecStart=${svc_script_path}
+    \nRestart=always
+    \n[Install]
+    \nWantedBy=multi-user.target
+    "
+    # chmod .sh script 
+    chmod +x $svc_script_path
+    
+    # write service file 
+    sudo echo -e $SVC_TEMPLATE > "/etc/systemd/system/${svc_script}.service"
+
+    # enable svc file 
+    sudo systemctl enable "${svc_script}.service"
+    
+    # start svc 
+    sudo systemctl start "${svc_script}.service"
+ 
+
+}
+
+case "$1" in
+  monitor_temp)
+    svc_config "RbpiHealth_Temp" "monitor_temp"
+    ;;
+  *)
+    cli_help_configsvc
+    ;;
+esac

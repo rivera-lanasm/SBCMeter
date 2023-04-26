@@ -5,9 +5,6 @@ set -e
 # load common functions
 . "$PIMONCLI_WORKDIR/common"
 
-# load config 
-#load_config
-
 # =======================
 cli_help_configsvc() {
   echo "
@@ -27,21 +24,22 @@ svc_config() {
     local svc_name=$1
     local svc_script=$2
     
-    mkdir -p "$PIMONCLI_WORKDIR/data"
-    mkdir -p "$PIMONCLI_WORKDIR/error"
-
-    # populate  
-    #SVC_NAME=("RbpiHealth_Temp")
-    #SVC_SCRIPT=("monitor_temp")
+    DATA_DIR="$PIMONAPP_WORKDIR/app/static/data"
+    ERROR_DIR="$PIMONCLI_WORKDIR/error"
     
+    mkdir -p $DATA_DIR
+    mkdir -p $ERROR_DIR
+
     #svc_script=${SVC_SCRIPT[$i]}
     svc_script_path="$PIMONAPP_WORKDIR/system_setup/$svc_script.sh"
+
+    # check if service is already configured and running
 
     # svc template 
     SVC_TEMPLATE="[Unit]
     \nDescription=${svc_name}
     \n[Service]
-    \nExecStart=${svc_script_path}
+    \nExecStart=${svc_script_path} ${DATA_DIR} ${ERROR_DIR}
     \nRestart=always
     \n[Install]
     \nWantedBy=multi-user.target
@@ -60,21 +58,6 @@ svc_config() {
  
 
 }
-
-
-
-# no argument
-#[ ! -n "$1" ] && cli_help_configsvc
-# unsupported argument
-
-# case stmt
-#cli_log "PiMonitor: List $1"
-# service|svc
-#echo "
-#Raspberry Health Monitor Systemd Services:
-#    - monitor_temp --> records Pi temp. (C) every five minutes
-#"
-#
 
 case "$1" in
   monitor_temp)
