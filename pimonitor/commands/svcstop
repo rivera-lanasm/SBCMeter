@@ -21,11 +21,19 @@ Options:
 # =======================
 svc_stop() {
     
-    # variables
     local svc_script=$1
+    # enable svc file 
+    sudo systemctl enable "${svc_script}.service"
+    # stop service 
+    sudo systemctl stop "${svc_script}"
+    # delete service 
+    sudo systemctl disable "${svc_script}"
+    # rm sym links 
+    sudo rm "/etc/systemd/system/${svc_script}"
+    sudo rm "/usr/lib/systemd/system/${svc_script}"
+    sudo systemctl daemon-reload
     
-
-
+    echo "${svc_script} service removed"
 }
 
 case "$1" in
