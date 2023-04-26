@@ -36,14 +36,15 @@ svc_config() {
     svc_script_path="$PIMONAPP_WORKDIR/system_setup/$svc_script.sh"
 
     # check if service is already configured and running
+    cli_log "check svc status"
     svc_status=$(systemctl is-enabled $svc_script)
     if [ "$svc_status" = "enabled" ]; then
-    	echo "service: $svc_script is already enabled"
+    	cli_log "service: $svc_script is already enabled"
 	    exit 0
     elif [ "$svc_status" = "*Failed to get unit file state*" ]; then
-    	echo "service: $svc_script not created"
+    	cli_log "service: $svc_script not created"
     else
-    	echo "service: $svc_script, start enable proc"
+    	cli_log "service: $svc_script, start enable proc"
     fi
 
     # svc template 
@@ -72,9 +73,9 @@ svc_config() {
 
 case "$1" in
   monitor_temp)
-    echo "Start Config"
+    cli_log "Start Config"
     svc_config "RbpiHealth_Temp" "monitor_temp"
-    echo "end config"
+    cli_log "end config"
     ;;
   *)
     cli_help_configsvc
