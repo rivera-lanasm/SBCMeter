@@ -5,3 +5,4 @@ data/*
 error/*
 pimonitor/config
 pimonitor/log/*.log
+*.pyc
