@@ -1,12 +1,31 @@
 <!doctype html>
 <html>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/global.css')}}">
     <head>
-        <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
-        <h1>blog</h1>
-        <h2>{{ title }} - Microblog</h2>
+        <title>{{ title }} - Microblog</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/global.css')}}">
+        
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="{{ url_for('static', filename='js/monitor_temp.js') }}"></script>
+ 
     </head>
     <body>
-        <h1>Hello, {{ user.username }}!</h1>
+        <header>
+            <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </nav>
+            <h1>Blog</h1>
+        </header>
+        <main>
+            <h1>why</h1>
+            <div id="visualization"></div>
+        </main>
+        <footer>
+            <small>Example Text - © 2023</small>
+        </footer>
     </body>
 </html>
+

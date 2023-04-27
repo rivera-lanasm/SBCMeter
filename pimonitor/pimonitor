@@ -39,6 +39,9 @@ case "$1" in
   svcstop)
     "$PIMONCLI_WORKDIR/commands/svcstop" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/svcstop_${2}.log"
     ;;
+  webserver)
+    "$PIMONCLI_WORKDIR/commands/webserver" "$2" | tee -ia "$PIMONCLI_WORKDIR/logs/webserver_${2}.log"
+    ;;
   *)
     cli_help
     ;;

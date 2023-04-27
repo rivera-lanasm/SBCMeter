@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+set -e
+
+# load common functions
+. "$PIMONCLI_WORKDIR/common"
+
+# load config 
+load_config
+
+# =======================
+cli_help_webserver() {
+  echo "
+Command: webserver
+Usage: 
+  configure systemd service by name
+Options:
+  start --> 
+  stop --> 
+"
+  exit 1
+}
+
+# =======================
+webserver_start() {
+    # check if web server is already running
+    #
+    # check if python env is present 
+    #
+    # activate env 
+    
+    #  check ip whitelist
+    #
+    # flask run (open port?)
+}
+
+
+webserver_stop() {
+
+    # check if web server is not running 
+    #
+    # kill process
+}
+
+
+case "$1" in
+  start)
+    webserver_start
+    ;;
+  stop)
+    webserver_stop
+    ;;
+  *)
+    cli_help_webserver
+    ;;
+esac
