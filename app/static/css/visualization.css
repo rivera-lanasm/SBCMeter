@@ -1,0 +1,67 @@
+/* Set a font family for the entire plot */
+#visualization svg {
+  font-family: Arial, sans-serif;
+}
+
+/* Set the background color to dark gray */
+#visualization {
+  background-color: #333;
+}
+
+/* Style the x-axis label */
+#visualization .axis-x-label {
+  font-size: 14px;
+  font-weight: bold;
+  fill: #fff; /* Set the label color to white */
+}
+
+/* Style the y-axis label */
+#visualization .axis-y-label {
+  font-size: 14px;
+  font-weight: bold;
+  fill: #fff; /* Set the label color to white */
+}
+
+/* Style the title */
+#visualization .plot-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff; /* Set the title color to white */
+}
+
+/* Style the line */
+#visualization path {
+  stroke: #fff; /* Set the line color to white */
+  stroke-width: 2px;
+  fill: none;
+}
+
+/* Style the data points */
+#visualization circle {
+  fill: #fff; /* Set the data point fill color to white */
+  stroke: #333; /* Set the data point stroke color to dark gray */
+  stroke-width: 2px;
+}
+
+/* Style the gridlines */
+#visualization .grid line {
+  stroke: #777; /* Set the gridline color to a lighter gray */
+  stroke-dasharray: 5px;
+}
+
+/* Style the x-axis ticks and tick labels */
+#visualization .axis-x line,
+#visualization .axis-x path,
+#visualization .axis-x text {
+  stroke: #ccc; /* Set the tick and label color to a lighter gray */
+}
+
+/* Style the y-axis ticks and tick labels */
+#visualization .axis-y line,
+#visualization .axis-y path,
+#visualization .axis-y text {
+  stroke: #ccc; /* Set the tick and label color to a lighter gray */
+}
+

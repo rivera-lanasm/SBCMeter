@@ -3,10 +3,19 @@
     <head>
         <title>{{ title }} - Microblog</title>
         <link rel="stylesheet" href="{{url_for('static', filename='css/global.css')}}">
-        
-        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/visualization.css')}}">
+       
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <script src="https://d3js.org/d3.v6.min.js"></script>
         <script src="{{ url_for('static', filename='js/monitor_temp.js') }}"></script>
- 
+
+       // <script>
+       //     $(document).ready(function(){
+       //         // call the d3 visualization function, passing the data variable as a parameter
+       //         monitor_temp(data);
+       //         });
+       // </script>
     </head>
     <body>
         <header>
@@ -20,7 +29,6 @@
             <h1>Blog</h1>
         </header>
         <main>
-            <h1>why</h1>
             <div id="visualization"></div>
         </main>
         <footer>

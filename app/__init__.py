@@ -3,5 +3,6 @@ from flask import Flask
 
 # flask app
 app = Flask(__name__)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 from app import routes

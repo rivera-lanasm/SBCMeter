@@ -44,6 +44,7 @@ main {
 /* Style the data visualizations using the D3 library */
 .visualization {
   margin: 10px;
+  background-color: #1c1c1c;
 }
 
 /* Set a comfortable color contrast for text and other content */

@@ -23,6 +23,9 @@ def read_temp():
     df = pd.DataFrame({"Datetime":date_list, "Temperature":temp_list})
     return df
 
-
-
+if __name__ == "__main__":
+    df=read_temp()
+    df.to_json('/home/mriveralanas/projects/rbpi_system_monitor/app/static/data/monitor_temp.json', 
+               orient='records', 
+               lines=False)
 

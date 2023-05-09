@@ -1,11 +1,9 @@
-// Define the data
-var data = [
-  { date: "2022-01-01", value: 10 },
-  { date: "2022-01-02", value: 20 },
-  { date: "2022-01-03", value: 15 },
-  { date: "2022-01-04", value: 25 },
-  { date: "2022-01-05", value: 30 }
-];
+$(document).ready(function() {
+
+// load data 
+var data = d3.csv("/static/data/monitor_temp.json")
+             .then(data => console.log(data))
+
 
 // Set the dimensions and margins of the plot
 var margin = { top: 10, right: 30, bottom: 30, left: 60 },
@@ -13,7 +11,7 @@ var margin = { top: 10, right: 30, bottom: 30, left: 60 },
   height = 400 - margin.top - margin.bottom;
 
 // Parse the date/time
-var parseDate = d3.timeParse("%Y-%m-%d");
+var parseDate = d3.timeParse("%Y-%m-%d %H:%M:S");
 
 // Set the ranges
 var x = d3.scaleTime().range([0, width]);
@@ -23,10 +21,10 @@ var y = d3.scaleLinear().range([height, 0]);
 var line = d3
   .line()
   .x(function (d) {
-    return x(d.date);
+    return x(d.Datetime);
   })
   .y(function (d) {
-    return y(d.value);
+    return y(d.Temperature);
   });
 
 // Append the SVG object to the body of the page
@@ -40,8 +38,8 @@ var svg = d3
 
 // Format the data
 data.forEach(function (d) {
-  d.date = parseDate(d.date);
-  d.value = +d.value;
+  d.date = parseDate(d.Datetime);
+  d.value = +d.Temperature;
 });
 
 // Scale the range of the data
@@ -71,3 +69,4 @@ svg.append("g")
 // Add the Y Axis
 svg.append("g").call(d3.axisLeft(y));
 
+});
